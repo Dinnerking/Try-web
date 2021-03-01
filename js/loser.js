@@ -43,7 +43,7 @@ $(document).ready(function () {
     $(".right span:contains('Working')").addClass("fas fa-stream");
 
     //just for fun//
-    $('.typing').html('<p>綽號晚餐－一個住在台中的快樂阿宅，正在努力轉職，目標是能在任何地方工作QQ</p>')
+    $('.typing').html('')
     $('.typing ').animate({ 'width': '100%' }, 2500);
 
 });
