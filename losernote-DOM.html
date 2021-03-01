@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<HTML>
+
+<HEAD>
+    <META NAME="GENERATOR" Content="Microsoft Visual Studio" charset=”utf-8”>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A hidden place for a loser like me" />
+    <TITLE>Loser Hidden Place</TITLE>
+    <link rel="stylesheet" type="text/css" href="css/loser.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.css" />
+    <link rel="shortcut icon" href="img/gold.ico" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</HEAD>
+
+<BODY>
+    <div class="wrap">
+        <nav>
+            <h1>
+                <a class="logo animate__animated animate__bounce" href="index.html">Loser Hidden Place</a>
+            </h1>
+            <ul class="menu">
+                <li><a class="home" href="index.html">Home</a></li>
+                <li>
+                    <a class="drop-menu" href="#">Writing</a>
+                    <ul class="drop-content">
+                        <li><a class="notes" href="losernote.html">Notes</a></li>
+                    </ul>
+                </li>
+                <li><a class="contact" href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <main class="main border">
+            <span class="back"><a href="#">Back</a></span>
+
+            <article>
+                <header>
+                    <h2>DOM的筆記</h2>
+                    <time class="far fa-calendar-times" title="Last edited" datetime="2020-12-25">
+                        2020-12-25
+                    </time>
+                    <a class="tags fas fa-tags" title="tags" href="#"> html</a>
+                </header>
+
+
+                <h3>前言：</h3><br />
+                <p>這個應該算是基本概念，翻譯<span class="dashing"><a
+                            href="https://bitsofco.de/">bitsofco</a></span>的文章和整合其他資料，我覺得有點難所以整理滿久的QQ
+                </p>
+
+                <h3>DOM到底是什麼?</h3>
+                <blockquote>
+                    <p>Document Object Model文件物件模型－由W3C所定義，是一個網頁的※介面（interface），它的本質是API（Application Programming
+                        Interface應用程式介面），藉由將HTML文件內的標籤、文字和圖片定義成物件，讓編譯器可以讀取並操作其內容、架構和樣式(style)，
+                        DOM把網頁和程式腳本或程式語言連接了起來。
+                    </p>
+                    <p>※介面(interface)人和機械無法直接溝通，需要一個溝通橋樑，微波爐上的按鈕幫助人類和微波爐互動，按鈕就是介面</p>
+                </blockquote>
+
+                <h3>那網頁是怎麼生成的呢?</h3>
+                <blockquote>
+                    <p>瀏覽器將單純的html文檔轉化為複雜、具有樣式(style)和互動性的網頁，這整個過程叫做”關鍵渲染路徑”，這整個過程還滿複雜的，但粗略區分的話可以分成兩個步驟：</p>
+                    <ul>
+                        <li>瀏覽器解析文檔，確定哪些部分會被渲染</li>
+                        <li>瀏覽器執行渲染</li>
+                    </ul>
+                </blockquote>
+                <img src="img/pic-dom.png" />
+                <p>
+                    第一個階段的部分叫做”渲染樹”，代表了會被渲染在頁面上的HTML元素和相關的樣式，而渲染樹的生成則需要兩個要件：
+                </p>
+                <ul>
+                    <li>CSSOM－html元素相關的樣式</li>
+                    <li>DOM－html元素</li>
+                </ul>
+                <br />
+                <h3>如何生成DOM?(還有它長怎樣?)</h3>
+                <blockquote>
+                    <p>DOM是物件導向 (object-based) 的HTML原始文件 (sourse html document)
+                        代表，本質上來說它們兩者還是有些不同，DOM為了讓各種瀏覽器可以讀取，把HTML的文檔結構和內容轉換成物件模型 (object model)</p>
+                </blockquote>
+                <p>
+                    DOM的物件模型由所謂的”節點樹 (node tree)
+                    ”來表示，之所以叫做”樹”是因為看起來像一根主幹分成大大小小的枝幹一樣，然後大小枝幹可能還會有葉子。以這個例子來說，主幹是根元素＜html＞，分支則是在html下的子元素(也可稱作nested
+                    elements，指被包在某個元素內的元素)，而這些枝幹的樹葉則是在元素中的內容（文字之類的）。
+                </p>
+                <img src="img/pic-dom2.png" />
+                <p>以上圖來說，它的節點樹可以這樣表示：</p>
+
+                <img class="small-pic" src="img/pic-dom3.png" />
+                <h3>那我們來看什麼東西<span class="alert">不是</span>DOM</h3>
+                <p>以上圖來說，DOM看起來跟HTML原始檔案和開發者工具的內容差不多，但這當中還是有差異的，為了要完全理解DOM到底是什麼，<b>我們需要來看看DOM到底不是哪些東西－</b></p>
+                <br />
+                <h3 class="alert">DOM不是你的HTML原始文件</h3>
+                <p>雖然DOM是由HTML的文檔創造出來的，但也不完全一樣－</p>
+                <p>下面有兩個實例來說明DOM和HTML原始碼的差異：</p>
+                <blockquote>
+                    <ul>
+                        <li>HTML格式不合格</li>
+                    </ul>
+                </blockquote>
+                <p>
+                    DOM是符合格式的HTML的介面，在創造DOM的過程中，<span class="alert">瀏覽器會修正不合格的HTML程式碼</span>
+                </p>
+
+                <img src="img/pic-dom4.png" />
+                <p>這個文檔顯然少了＜head＞和＜body＞元素，對於HTML文件來說，這些都是非常必要的元素，那我們再來看看這個文檔生成的DOM樹－</p>
+
+                <img class="small-pic" src="img/pic-dom5.png" />
+                <p>居然已經被更正了！太神喇！</p>
+
+                <blockquote>
+                    <ul>
+                        <li>DOM被Javascript修改的時候</li>
+                    </ul>
+                </blockquote>
+                <p>
+                    DOM除了可以作為查看HTML文件的介面之外，也可以用Javascript修改，讓其具有可動性。
+                </p>
+
+                <p>舉例來說，我們可以用Javascript新增DOM節點－</p>
+
+                <img src="img/pic-dom6.png" />
+                <p>這樣就會創造出DOM，但當然跟我們HTML的原始文件沒有關係(因為它不會出現在HTML原始檔案中)</p>
+                <br />
+                <h3 class="alert">DOM不是大家在瀏覽器中看到的東西（就是在說渲染樹）</h3>
+                <p>大家在瀏覽器中看到的都是前面說的渲染樹，是DOM和CSSOM的合體，兩者最大的差異在於－渲染樹只會由最終將出現在螢幕上的內容組成，而DOM則會包含、＜p＞、＜h1＞和被display:none的元素等等…這類的元素。
+                </p>
+
+                <img src="img/pic-dom7.png" />
+                <p>以上圖為例的話：</p>
+                <img class="small-pic" src="img/pic-dom8.png" />
+                <p>渲染樹和視區(viewport)，並不會包含＜p＞元素，因為被藏起來了</p>
+                <img class="small-pic" src="img/pic-dom9.png" />
+                <p>而DOM則會包含了＜p＞元素</p>
+                <br />
+                <h3 class="alert">DOM也不是那些顯示在開發者工具裡面的內容</h3>
+                <p>
+                    這個比較難辨，開發者工具在瀏覽器提供了和DOM最相近的值，即便如此，開發者工具仍然包含了許多不是DOM的資料。
+                </p>
+                <p>
+                    最好的例子就是CSS偽元素，用::before和::after選擇器創造出來的偽元素形成一部份的CSSOM和渲染樹，但技術上來說不算是DOM的一部份，因為DOM實際上就是從HTML原始文件中創造出來的，不包含套用在元素上的style樣式。
+                </p>
+                <img src="img/pic-dom10.png" />
+                <p>即使偽元素不是DOM的一部份，它們還是會出現在開發者工具裡面－<span class="alert">這也是為什麼偽元素不能被Javascript鎖定，因為它們根本不是DOM的一部份！</span>
+                </p>
+                <br />
+                <h3 class="alert">回顧</h3>
+
+                <blockquote class="recap">
+                    <p>
+                        DOM是HTML文檔的介面，瀏覽器用它作為依據，判斷第一步應該要渲染什麼內容在視區上，Javascript可以修改它在網頁上的內容、結構和樣式，雖然和HTML的原始文件相似，但DOM仍然有其不同之處。
+                    </p>
+                    <ul>
+                        <li>DOM永遠都是格式正確的HTML</li>
+                        <li>含有極大的靈活度可以被Javascript編輯和修改</li>
+                        <li>不包含偽元素(如::after)</li>
+                        <li>可以顯示隱藏的元素（如display: none）</li>
+                    </ul>
+                </blockquote>
+
+                <footer>
+                    <blockquote>
+                        Reference：<br />　
+                        <a target="_blank" href="https://bitsofco.de/what-exactly-is-the-dom/">What, exactly, is the
+                            DOM?</a><br />
+                    </blockquote>
+                </footer>
+            </article>
+
+        </main>
+        <br />
+        <br />
+        <footer class="copyright">
+            <p>&copy;I don't think people gonna copy this lol</p>
+        </footer>
+        </article>
+    </div>
+
+
+
+
+
+
+
+
+    <!------------------------------------------jas-------------------------------------------->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/loser.js"></script>
+
+    <!------------------------------------------jas-------------------------------------------->
+
+
+</BODY>
+
+</HTML>

@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<HTML>
+
+<HEAD>
+    <META NAME="GENERATOR" Content="Microsoft Visual Studio" charset=”utf-8”>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A hidden place for a loser like me" />
+    <TITLE>Loser Hidden Place</TITLE>
+    <link rel="stylesheet" type="text/css" href="css/loser.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.css" />
+    <link rel="shortcut icon" href="img/gold.ico" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</HEAD>
+
+<BODY>
+    <div class="wrap">
+        <nav>
+            <h1>
+                <a class="logo animate__animated animate__bounce" href="index.html">Loser Hidden Place</a>
+            </h1>
+            <ul class="menu">
+                <li><a class="home" href="index.html">Home</a></li>
+                <li>
+                    <a class="drop-menu" href="#">Writing</a>
+                    <ul class="drop-content">
+                        <li><a class="notes" href="losernote.html">Notes</a></li>
+                    </ul>
+                </li>
+                <li><a class="contact" href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <main class="main border">
+            <span class="back"><a href="#">Back</a></span>
+
+            <article>
+                <header>
+                    <h2>Z-index的筆記</h2>
+                    <time class="far fa-calendar-times" title="Last edited" datetime="2020-12-25">
+                        2020-12-25
+                    </time>
+                    <a class="tags fas fa-tags" href="#"> CSS</a>
+                </header>
+
+                <h3>前言：</h3><br />
+                <p>工程師朋友們意思是說如果架構寫好的話不用用到z-index也很少用啦^q^但我是菜逼八所以喬了整個晚上的z-index，後來看了一些文章所以來整理一下－</p>
+
+                <p>z-index，指z軸的高度，越大越靠近使用者，可以是正、負值和0，且必須是整數。</p>
+                <p>Z軸有點像這樣：</p>
+                <blockquote>
+                    <ul>
+                        <li>底層 (離使用者最遠)</li>
+                        <li>第-3層(B3) 接下來是一個地下室的概念</li>
+                        <li>第-2層(B2)</li>
+                        <li>第-1層(B1)</li>
+                        <li>第 0層 (預設值，平地)</li>
+                        <li>第 1層(1樓) 往上爬囉</li>
+                        <li>第 2層(2樓)</li>
+                        <li>第 3層(3樓)</li>
+                        <li>...</li>
+                        <li>最上層 (最靠近使用者)</li>
+                    </ul>
+                </blockquote>
+                <p>但事情沒那麼簡單，不然我就不會寫這篇了^q^</p>
+                <p>
+                    首先，大家都應該知道的重點：
+                </p>
+                <blockquote>
+                    <p>
+
+                        如果沒有成立堆疊環境(Stacking context)，Html的順序會決定堆疊順序<br />（程式的覆蓋性會導致後面覆蓋前面）
+                    </p>
+                </blockquote>
+                <p>
+
+                    沒使用z-index和position的時候事情會比較沒那麼複雜，此時的堆疊順序(Stacking order)會照html怎麼寫就怎麼排（不要用負的margin去堆疊行內元素就好）
+                </p>
+                <blockquote>
+                    沒有成立堆疊環境的話，有z-index也沒用
+                </blockquote>
+                <p>
+                    大家一定都有這種經驗，你怎麼設z-index都沒用，因為根本沒有堆疊環境
+                </p>
+                <img alt="picture for z-index" src="img/pic-z-index.png" />
+                <p>
+                    編號代表它們在html的生成順序，
+                    怎麼設z-index都各種被覆蓋的邊緣DIV#5，原因是沒有position，
+                    即便是最晚生成的，還是被其他元素打假的
+                </p>
+                <blockquote class="question">
+                    <p>那麼，<span class="delete">我要在哪裡才可以買到呢？</span>堆疊環境怎麼成立呢 (´・ω・`)？</p>
+                </blockquote>
+                <ul>
+                    <li>當該元素的position和z-index都非預設時</li>
+                    <li>元素的opacity小於1的時候</li>
+                    <li>許多新的CSS屬性也會創造出堆疊環境，<br />例如transforms, filters, cas-regions, paged media和possibly可以往<a
+                            class="dashing" title="MDN Web Docs" target="_blank"
+                            href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context">這裡</a>參照
+                    </li>
+                </ul>
+                <p>
+
+                </p>
+                <p>堆疊環境中的順序（由低到高）：</p>
+                <blockquote>
+                    <p>
+                        堆疊環境中的根元素 <span class="dashing">底層</span><br />
+                        （＜html＞是唯一預設為堆疊環境的根元素，但所有的元素都可以成為堆疊環境的根元素）
+                    </p>
+                    <p>有position和負的z-index值的元素（和它們的子元素）<b>地下室</b></p>
+                    <p>沒有position的元素（參照html的出現順序）<b>平地</b></p>
+                    <p>有position但z-index為預設值的元素（和它們的子元素）<b>樓上</b></p>
+                    <p>含有position且z-index為正值的元素（和它們的子元素） <b class="dashing">最高層</b></p>
+                </blockquote>
+                <blockquote class="question">
+                    那我可不可以不要用z-index來排高低順序？
+                </blockquote>
+                <p>可以啊^q^</p>
+                <br />
+                <blockquote>
+                    當場上所有元素的z-index都沒有設定的時候－
+                </blockquote>
+                <ul>
+                    <li>根元素的背景跟邊界 <span class="dashing">底層</span></li>
+                    <li>沒有position的後代區塊</li>
+                    <li>有position的後代區塊 <span class="dashing">最高層</span></li>
+                </ul>
+                <img src="img/pic-z-index2.png" />
+                <p>
+                    編號代表它們在html的生成順序，
+                    可以看見DIV#5的position是預設值，其他有設position的區塊都照html的順序排列，
+                    <span class="delete">由此可知沒有position就沒有人權ㄛ</span>
+                </p>
+                <blockquote class="question">
+                    今晚我想來點…float？
+                </blockquote>
+                <p>
+                    有下float的區塊規則會比較不一樣，因為float會被夾在中間
+                </p>
+                <img src="img/pic-z-index3.png" />
+                <p>
+                    可以看到只有下float的區塊被夾在有position和沒有position的區塊之間，
+                    除此之外html的順序仍然適用
+                </p>
+                <p>含有float的排序如下：</p>
+                <blockquote>
+                    <ul>
+                        <li>根元素的背景跟邊界 <span class="dashing">底層</span></li>
+                        <li>沒有position的後代區塊，照html的生成順序</li>
+                        <li>float區塊</li>
+                        <li>沒有position的後代行內區塊元素</li>
+                        <li>有position的後代區塊，照html的生成順序 <span class="dashing">最高層</span></li>
+                    </ul>
+
+                </blockquote>
+                <p>
+                    不過，如果把DIV#4加上opacity:0.99，便會把DIV#2、#1、#3蓋掉，
+                    原因是opacity讓DIV#4成了為了堆疊環境，而且#4的生成時間比#1、#2、#3晚，
+                    所以直接覆蓋掉這些區塊了，建議可以去<span class="dashing"><a title="MDN Web Docs" target="_blank"
+                            href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/Stacking_and_float">這邊</a></span>用Chrome
+                    Console玩一下會比較清楚，
+                </p>
+                <footer>
+
+                    <blockquote>
+                        Reference：<br />
+                        <a target="_blank"
+                            href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/Adding_z-index">Using
+                            z-index</a><br />
+                        <a target="_blank"
+                            href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/Stacking_without_z-index">Stacking
+                            without the z-index</a><br />
+                        <a target="_blank"
+                            href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/Stacking_and_float">Stacking
+                            with floated blocks</a><br />
+                        <a target="_blank"
+                            href="https://philipwalton.com/articles/what-no-one-told-you-about-z-index/">What No One
+                            Told You About Z-Index</a><br />
+                    </blockquote>
+                </footer>
+            </article>
+
+        </main>
+        <br />
+        <br />
+        <footer class="copyright">
+            <p>&copy;I don't think people gonna copy this lol</p>
+        </footer>
+    </div>
+
+
+
+
+
+
+
+
+    <!------------------------------------------jas-------------------------------------------->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/loser.js"></script>
+
+    <!------------------------------------------jas-------------------------------------------->
+
+
+</BODY>
+
+</HTML>

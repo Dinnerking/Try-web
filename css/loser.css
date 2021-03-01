@@ -1,0 +1,469 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+u, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*-----------------------------belows are mine-----------------------------*/
+
+*{
+    box-sizing:border-box;
+}
+p, h2, h3, td, a, span, blockquote {
+    font-family: 'Comic Sans MS';
+}
+h1,h2,h3, th{
+    font-weight:bold;
+}
+p, .date, time, ul, li, td, a, blockquote,.type {
+    font-size: 20px;
+}
+.date, a{
+    color:navy;
+}
+h2, h3, ::first-letter, th {
+    font-size: 25px;
+}
+body {
+    background-color: powderblue;
+    position:relative;
+    z-index:-4;
+}
+
+.wrap {
+    max-width: 1300px;
+    margin: 0 auto;
+    position:relative;
+    z-index:-5;
+}
+.wrap>nav{
+    width:95%;
+}
+@media screen and (max-width: 1920px) {
+    .wrap > nav {
+        width: 68.8%;
+    }
+    .wrap > middle {
+        width: 68.8%;
+    }
+    .wrap {
+        width: 68.8%;
+    }
+}
+@media screen and (max-width:1800px){
+    .wrap > nav{
+        width:78.5%;
+    }
+    .wrap > middle {
+        width: 78.5%;
+    }
+    .wrap {
+        width:78.5%;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .wrap > nav {
+        width: 95%;
+    }
+    .wrap > middle {
+        width: 95%;
+    }
+    .wrap {
+        width: 95%;
+    }
+}
+
+.copyright {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+a {
+    text-decoration: none;
+}
+.wrap > nav, .main, article > nav, .codepen, .middle, .middle>h3 {
+    margin-bottom: 5%;
+}
+article>p, article>blockquote{
+    margin-bottom:2%;
+}
+/*for scrollbar*/
+/* width */
+::-webkit-scrollbar {
+    width: 25px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: antiquewhite;
+    margin-top:50%;
+    margin-bottom:20%;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+        background: ivory;
+}
+::-webkit-scrollbar-thumb:active {
+        background: white;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.back {
+    position: fixed;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 30px 15px 0;
+    border-color: transparent #007bff transparent transparent;
+}
+/*------------------------------for all----------------------------------*/
+.wrap > nav {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    background-color: powderblue;
+    box-shadow:3px 8px 8px 2px gray;
+}
+.logo {
+    background: url(../img/loser.png) 0 50% no-repeat;
+    background-size: 100%;
+    width: 400px;
+    height: 100%;
+    display: block;
+    text-indent: 101%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.menu {
+    display: flex;
+    width: 65%;
+    opacity: 0;
+    position:relative;
+    z-index:10;
+}
+.menu.show{
+    opacity:1;
+    transition:all 0.5s ease-in;
+}
+.menu a{
+    font-size:1.5em;
+    display:block;
+    text-align:center;
+    line-height:1.5;
+    font-weight:bold;
+}
+.menu li{
+    width:50%;
+    margin-right:5%;
+}
+ .menu li:hover, .drop-menu.active, .drop-content > li {
+    border-bottom: 5px dashed antiquewhite;
+}
+
+.border {
+    border: 5px dashed antiquewhite;
+}
+.drop-menu {
+    transition: all 0.5s ease-out;
+}
+.drop-content {
+    width: 100%;
+    position:relative;
+    display: none;
+    box-shadow:5px 10px 10px gray;
+    background-color:cornflowerblue;
+}
+.drop-content > li{
+    width:100%;
+}
+.drop-content > li :hover, .drop-menu.active{
+    background-color:orange;
+}
+/*-------------------------------------above are nav-------------------------------------------------*/
+.main {
+    opacity: 0;
+    margin-top: 150px;
+    position:relative;
+    z-index:-3;
+}
+.main.goin{
+    opacity:1;
+    transition:all 1s ease-in;
+}
+.left li > h2::first-letter, .right li > h2::first-letter, .middle >h2::first-letter {
+    font-size: 1.2em;
+}
+.left, .right, .middle {
+    border: 5px dashed antiquewhite;
+    margin-right: 2%;
+    padding: 0 3%;
+}
+.middle{
+    padding:2%;
+}
+.middle>h2{
+    margin-bottom:2%;
+}
+
+.typing {
+  white-space: nowrap;
+  text-indent:2em;
+  line-height:1.5;
+  width:0;
+}
+
+.left {
+    width: 40%;
+    float: left;
+    display: inline-block;
+}
+.left ul, .right ul li, .right a{
+    line-height:2;
+}
+.left h2, .right h2, .middle h2{
+    font-size:30px;
+    color:darkcyan;
+    text-shadow:5px 5px #87b694;
+}
+.indent{
+    text-indent:10%;
+}
+.right {
+    width: 55%;
+    float:right;
+    display:inline-block;
+}
+.right a{
+    text-indent:5%;
+}
+.genre{
+    font-size:30px;
+    padding:2%;
+}
+/*--------------------------------above are for home page--------------------------------*/
+
+.writing-notes {
+    padding: 2%;
+    opacity: 0.99;
+    position:relative;
+    display:flex;
+    z-index:-1;
+}
+.writing-notes li{
+    width:30%;
+    height:500px;
+    box-shadow:1px 3px 7px 2px gray;
+    padding:2%;
+    border-radius:5%;
+    background-color:floralwhite;
+    position:relative;
+    margin-left:2%;
+}
+.writing-notes>li>.tags{
+    margin-left:5%;
+}
+.writing-notes h2{
+    text-align:center;
+}
+.writing-notes>li>h2, .writing-notes time, article h2 {
+    margin-bottom: 5%;
+}
+.writing-notes li h2 a{
+    font-size:1em;
+}
+.writing-notes li h2::first-letter{
+    font-size:1.5em;
+}
+.writing-notes  li  h2 {
+    position: relative; 
+}
+.writing-notes  li  h2::after {
+    content: "";
+    border-bottom:5px lightcoral dashed;
+    position: absolute;
+    transition-duration: 0.5s;
+    width: 100%;
+    transform: scaleX(0);
+    bottom:-10px;
+    left:0;
+    transition-timing-function: ease-in-out;
+}
+.writing-notes  li  h2:hover::after{
+    transform:scaleX(1);
+}
+.writing-notes li p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    text-indent: 2em;
+    margin-bottom:2%;
+}
+.writing-notes img{
+    width:100%;   
+    height:50%;  
+}
+.read-button {
+    padding: 2%;
+    position:absolute;
+    right:5%;
+    bottom:2%;
+    background-color: transparent;
+    font-size:1.25em;
+    font-weight: bold;
+    transition: all 0.5s ease-in-out;
+    cursor:pointer;
+    outline:none;
+}
+.read-button:hover{
+    transition:all 0.5s ease-in-out;
+    color:coral;
+}
+
+/*----------------------------------------------above are for note page------------------------------------------------------*/
+article, blockquote{
+    line-height:1.5;
+}
+.delete {
+    text-decoration: line-through;
+}
+article{
+    padding:2%;
+    width:80%;
+    margin:0 auto;
+}
+blockquote {
+    font-style: italic;
+    color: antiquewhite;
+    background-color: black;
+    padding: 1.5%;
+    border-left: 20px gray double;
+}
+.question {
+    background-color: mediumpurple;
+    border-color: pink;
+}
+.recap {
+    background-color:  indigo;
+    border-color:  dodgerblue;
+}
+article p{
+    text-indent:2em;
+}
+.dashing {
+    font-size: 1.2em;
+    border-bottom: 2px darkred dashed;
+    animation: dashing .75s step-end infinite;
+}
+@keyframes dashing{
+    0%{
+        border-color:transparent;
+    }
+    50% {
+        border-color: darkred;
+    }
+}
+article a:hover{
+    color:lightcoral;
+}
+article h2{
+    font-size:2.5em;
+}
+article h3, article .tags, article time{
+    font-size:1.5em;
+}
+
+article h2::first-letter, article>h3::first-letter{
+    font-size:1.2em;
+}
+article .tags {
+    margin-left: 5%;
+}
+
+article>ul >li, blockquote>ul>li{
+    list-style: decimal;
+}
+article ul{ /*for a more good looking layout*/
+    padding-left:5%;
+}
+/*for pics*/
+article img{
+    width:80%;
+    margin:0 auto;
+    padding:3.5%;
+}
+.small-pic{
+    width:50%;
+}
+
+/*for some special stuffs need to be alert*/
+.alert{
+    color: brown;
+}
+/*--------------------------------for articles-------------------------*/
+footer > blockquote > a {
+    color: antiquewhite;
+    transition: all 0.5s ease-in-out;
+}
+footer > blockquote > a:hover{
+    color:gold;
+    transition:all 0.5s ease-in-out;
+}
+
+
