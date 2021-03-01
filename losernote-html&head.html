@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<HTML>
+
+<HEAD>
+    <META NAME="GENERATOR" Content="Microsoft Visual Studio" charset=”utf-8”>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A hidden place for a loser like me" />
+    <TITLE>Loser Hidden Place</TITLE>
+    <link rel="stylesheet" type="text/css" href="css/loser.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.css" />
+    <link rel="shortcut icon" href="img/gold.ico" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</HEAD>
+
+<BODY>
+    <div class="wrap">
+        <nav>
+            <h1>
+                <a class="logo animate__animated animate__bounce" href="index.html">Loser Hidden Place</a>
+            </h1>
+            <ul class="menu">
+                <li><a class="home" href="index.html">Home</a></li>
+                <li>
+                    <a class="drop-menu" href="#">Writing</a>
+                    <ul class="drop-content">
+                        <li><a class="notes" href="losernote.html">Notes</a></li>
+                    </ul>
+                </li>
+                <li><a class="contact" href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <main class="main border">
+            <span class="back"><a href="#">Back</a></span>
+
+            <article>
+                <header>
+                    <h2>Html head的筆記</h2>
+                    <time class="far fa-calendar-times" title="Last edited" datetime="2020-12-19">
+                        2020-12-19
+                    </time>
+                    <a class="tags fas fa-tags" href="#"> SEO</a>
+                </header>
+
+                <h3>前言：</h3><br />
+                <p>整體來說這篇文章跟SEO（Search engine optimization）有關，但我現在只是一個臭新手所以就用到什麼寫什麼囉^q^，這篇大致整理常用的類別－
+                    大概會持續更新吧，看起來還有滿多要學。</p>
+
+                <p>以下皆為head標籤下的部分，雖然並不會在頁面上顯示，但搜尋引擎會讀，做網站的意義在於行銷自己與磨練技術，如果忽略了還滿可惜的。</p>
+                <blockquote>
+                    ＜meta name="generator" content="Microsoft Visual Studio" charset=utf-8＞<br />
+                </blockquote>
+                <p>
+                    說明此網頁是用什麼編輯器寫的，同時設定文件編碼，utf-8是一個超讚的通用字元集，幾乎可以涵蓋所有人類語言，每個網頁最好都要寫比較好，啊不然會亂碼^q^
+                    雖然有些瀏覽器聽說會幫忙校正亂碼（例如Chrome），不過當然自己負責把字元碼寫好比較好啦，不然沒用Chrome的沒人權喔QQ
+                </p>
+                <blockquote>
+                    ＜meta name="viewport" content="width=device-width, initial-scale=1.0"＞
+                </blockquote>
+                <p>
+                    隨著智慧手機的興起，viewport用來設定可見區域，讓不同裝置可以用最佳解析度觀看
+                    這兩行是Visual Studio幫我寫的，我大概除了字形之外不會去寫吧，因為還沒學到響應式網頁ㄏㄏ
+                </p>
+                <blockquote>
+                    ＜meta name="description" content=" Loser Hidden Place is a blog for games, movies and coding
+                    reviews. Just some gibberish from a nerd, feel free to leave some comments!"＞
+                </blockquote>
+                <p>
+                    現行用來給搜尋引擎找關鍵字用的meta元素，以往的meta name="keywords" content="keywords"
+                    本來是用來提供搜尋引擎來判斷不同關鍵字顯示不同網頁類型的效果，但因為被垃圾釣魚網站濫用（填了一狗票關鍵字去騙搜尋引擎）所以現在的搜尋引擎都無視這個屬性，真是謝天謝地^q^理想字數是在150-160個字母之間，除此之外也不會影響Google排名，但寫得跟文案一樣美會有很多人上鉤喔。
+                </p>
+                <blockquote>
+                    ＜title : Loser Hidden Place＞
+                </blockquote>
+                <p>
+                    網頁名稱，這裡的title標籤並不是指文章上會看到的抬頭，我剛開始在學html的時候也很納悶為什麼打了之後都沒有出現，但其實是類似網頁名稱的存在，如果去把別人的網站加入書籤，也會顯示這個title喔。
+                </p>
+                <p>
+                    h1元素才是廣義大家認為的抬頭(雖然並不叫title)，現在也有用h1元素把logo框起來當搜尋引擎誘餌的做法，因為logo圖對搜尋引擎來說並沒有意義，需要用標籤讓它可以讀才有用。
+                </p>
+                <p>以下附上這種做法的程式碼：</p>
+                <div class="codepen">
+                    <iframe height="265" style="width: 100%;" scrolling="no" title="MWjYaVE"
+                        src="https://codepen.io/Dinnerking/embed/preview/MWjYaVE?height=265&theme-id=dark&default-tab=css,result"
+                        frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href='https://codepen.io/Dinnerking/pen/MWjYaVE'>MWjYaVE</a> by Dinner
+                        (<a href='https://codepen.io/Dinnerking'>@Dinnerking</a>) on <a
+                            href='https://codepen.io'>CodePen</a>.
+                    </iframe>
+                </div>
+                <blockquote>
+                    ＜link rel="stylesheet" type="text/css" href="css/loser.css"＞<br />
+                    ＜link rel="stylesheet" type="text/css" href="css/animate.css"＞<br />
+                    ＜link rel="stylesheet" type="text/css" href="css/fontawesome.css"＞<br />
+                </blockquote>
+                <p>匯入的CSS檔案</p>
+                <blockquote>
+                    ＜ link rel="shortcut icon" href="img/gold.ico"＞
+                </blockquote>
+                <p>網頁的icon</p>
+                <footer>
+
+                    <blockquote>
+                        <a target="_blank"
+                            href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML">What’s
+                            in the head? Metadata in HTML</a><br />
+                        <a target="_blank" href="https://medium.com/@jeffreywang1183/meta-description-17f65e1f47a6">網站
+                            SEO優化《第二篇》Meta Description 的寫法 — SEO優化| Jeffrey Talks</a>
+                    </blockquote>
+                </footer>
+            </article>
+
+        </main>
+        <br />
+        <br />
+        <footer class="copyright">
+            <p>&copy;I don't think people gonna copy this lol</p>
+        </footer>
+    </div>
+
+
+
+
+
+
+
+
+    <!------------------------------------------jas-------------------------------------------->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/loser.js"></script>
+
+    <!------------------------------------------jas-------------------------------------------->
+
+
+</BODY>
+
+</HTML>
