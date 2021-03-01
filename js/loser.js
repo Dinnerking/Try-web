@@ -20,14 +20,6 @@ $(document).ready(function () {
 
     })
 
-    //writing-notes page//
-    //$('.notes').click(function (event) {
-    //    $('.main, .main2').slideUp('slow');
-    //    $('.main3').show('slow');
-    //    $('.drop-content').slideUp('slow');
-    //    $('.drop-menu').removeClass('active');
-    //})
-    //-----------------------------------------------------------------------------------------
 
     //----------------------------for email contact-----------------------------------
     $('.contact').click(function (event) {
@@ -51,29 +43,8 @@ $(document).ready(function () {
     $(".right span:contains('Working')").addClass("fas fa-stream");
 
     //just for fun//
-    $('.typing').html('<p>ºï¸¹±ßÀ\¡Ğ¤@­Ó¦í¦b¥x¤¤ªº§Ö¼Öªü¦v¡A¥¿¦b§V¤OÂàÂ¾¡A¥Ø¼Ğ¬O¯à¦b¥ô¦ó¦a¤è¤u§@QQ</p>')
+    $('.typing').html('<p>ç¶½è™Ÿæ™šé¤ï¼ä¸€å€‹ä½åœ¨å°ä¸­çš„å¿«æ¨‚é˜¿å®…ï¼Œæ­£åœ¨åŠªåŠ›è½‰è·ï¼Œç›®æ¨™æ˜¯èƒ½åœ¨ä»»ä½•åœ°æ–¹å·¥ä½œQQ</p>')
     $('.typing ').animate({ 'width': '100%' }, 2500);
 
-    //swiper//
-    var mySwiper = new Swiper('.swiper-container', {
-        // Optional parameters
-        loop: true,
-        autoplay: {
-            delay: 5000,
-        },
-
-        // If we need pagination
-        pagination: {
-            el: '.swiper-pagination',
-        },
-
-        // Navigation arrows
-        //navigation: {
-        //    nextEl: '.swiper-button-next',
-        //    prevEl: '.swiper-button-prev',
-        //},
-
-      
-    })
 });
 
