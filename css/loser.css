@@ -128,7 +128,7 @@ a {
 .wrap > nav, .main, article > nav, .codepen, .middle, .middle>h3 {
     margin-bottom: 5%;
 }
-article>p, article>blockquote{
+section>p, section>blockquote{
     margin-bottom:2%;
 }
 /*for scrollbar*/
@@ -302,6 +302,7 @@ article>p, article>blockquote{
     position:relative;
     display:flex;
     z-index:-1;
+    flex-wrap: wrap;
 }
 .writing-notes li{
     width:30%;
@@ -311,7 +312,8 @@ article>p, article>blockquote{
     border-radius:5%;
     background-color:floralwhite;
     position:relative;
-    margin-left:2%;
+    margin:0 0 2% 2%;
+    
 }
 .writing-notes>li>.tags{
     margin-left:5%;
@@ -465,4 +467,14 @@ footer > blockquote > a:hover{
     transition:all 0.5s ease-in-out;
 }
 
-
+th, td{
+    outline:1px black solid;
+    text-align: center;
+    vertical-align: middle;
+}
+section ol li{
+    list-style:decimal;
+}
+section ul li{
+    list-style: disc;
+}

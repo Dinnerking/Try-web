@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('.drop-menu, .writing').click(function (event) {
+    $('.drop-menu, .writing, .tags').click(function (event) {
         event.preventDefault()
     })
 

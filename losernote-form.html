@@ -37,79 +37,169 @@
             <article>
                 <header>
                     <h2>Html head的筆記</h2>
-                    <time class="far fa-calendar-times" title="Last edited" datetime="2020-12-19">
-                        2020-12-19
+                    <time class="far fa-calendar-times" title="Last edited" datetime="2021-03-02">
+                        2021-03-02
                     </time>
-                    <a class="tags fas fa-tags" href="#"> SEO</a>
+                    <a class="tags fas fa-tags tags" href="#"> html</a>
                 </header>
-
+<section>
                 <h3>前言：</h3><br />
-                <p>整體來說這篇文章跟SEO（Search engine optimization）有關，但我現在只是一個臭新手所以就用到什麼寫什麼囉^q^，這篇大致整理常用的類別－
-                    大概會持續更新吧，看起來還有滿多要學。
-                </p>
-
-                <p>以下皆為head標籤下的部分，雖然並不會在頁面上顯示，但搜尋引擎會讀，做網站的意義在於行銷自己與磨練技術，如果忽略了還滿可惜的。</p>
-                <blockquote>
-                    ＜meta name="generator" content="Microsoft Visual Studio" charset=utf-8＞<br />
-                </blockquote>
                 <p>
-                    說明此網頁是用什麼編輯器寫的，同時設定文件編碼，utf-8是一個超讚的通用字元集，幾乎可以涵蓋所有人類語言，每個網頁最好都要寫比較好，啊不然會亂碼^q^
-                    雖然有些瀏覽器聽說會幫忙校正亂碼（例如Chrome），不過當然自己負責把字元碼寫好比較好啦，不然沒用Chrome的沒人權喔QQ
+                    標籤是好東西！
                 </p>
-                <blockquote>
-                    ＜meta name="viewport" content="width=device-width, initial-scale=1.0"＞
-                </blockquote>
-                <p>
-                    隨著智慧手機的興起，viewport用來設定可見區域，讓不同裝置可以用最佳解析度觀看
-                    這兩行是Visual Studio幫我寫的，我大概除了字形之外不會去寫吧，因為還沒學到響應式網頁ㄏㄏ
-                </p>
-                <blockquote>
-                    ＜meta name="description" content=" Loser Hidden Place is a blog for games, movies and coding
-                    reviews. Just some gibberish from a nerd, feel free to leave some comments!"＞
-                </blockquote>
-                <p>
-                    現行用來給搜尋引擎找關鍵字用的meta元素，以往的meta name="keywords" content="keywords"
-                    本來是用來提供搜尋引擎來判斷不同關鍵字顯示不同網頁類型的效果，但因為被垃圾釣魚網站濫用（填了一狗票關鍵字去騙搜尋引擎）所以現在的搜尋引擎都無視這個屬性，真是謝天謝地^q^理想字數是在150-160個字母之間，除此之外也不會影響Google排名，但寫得跟文案一樣美會有很多人上鉤喔。
-                </p>
-                <blockquote>
-                    ＜title : Loser Hidden Place＞
-                </blockquote>
-                <p>
-                    網頁名稱，這裡的title標籤並不是指文章上會看到的抬頭，我剛開始在學html的時候也很納悶為什麼打了之後都沒有出現，但其實是類似網頁名稱的存在，如果去把別人的網站加入書籤，也會顯示這個title喔。
-                </p>
-                <p>
-                    h1元素才是廣義大家認為的抬頭(雖然並不叫title)，現在也有用h1元素把logo框起來當搜尋引擎誘餌的做法，因為logo圖對搜尋引擎來說並沒有意義，需要用標籤讓它可以讀才有用。
-                </p>
-                <p>以下附上這種做法的程式碼：</p>
-                <div class="codepen">
-                    <iframe height="265" style="width: 100%;" scrolling="no" title="MWjYaVE"
-                        src="https://codepen.io/Dinnerking/embed/preview/MWjYaVE?height=265&theme-id=dark&default-tab=css,result"
-                        frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-                        See the Pen <a href='https://codepen.io/Dinnerking/pen/MWjYaVE'>MWjYaVE</a> by Dinner
-                        (<a href='https://codepen.io/Dinnerking'>@Dinnerking</a>) on <a
-                            href='https://codepen.io'>CodePen</a>.
-                    </iframe>
-                </div>
-                <blockquote>
-                    ＜link rel="stylesheet" type="text/css" href="css/loser.css"＞<br />
-                    ＜link rel="stylesheet" type="text/css" href="css/animate.css"＞<br />
-                    ＜link rel="stylesheet" type="text/css" href="css/fontawesome.css"＞<br />
-                </blockquote>
-                <p>匯入的CSS檔案</p>
-                <blockquote>
-                    ＜ link rel="shortcut icon" href="img/gold.ico"＞
-                </blockquote>
-                <p>網頁的icon</p>
-                <footer>
-
+                <h3>表格 Table</h2>
+                    <img src="img/pic-form2.png">
+                    <p>
+                        如上圖所說，有滿多標籤其實都是語意化用的，這份表格因為沒有CSS加持，所以並不會有外框線。
+                    </p>
                     <blockquote>
-                        <a target="_blank"
-                            href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML">What’s
-                            in the head? Metadata in HTML</a><br />
-                        <a target="_blank" href="https://medium.com/@jeffreywang1183/meta-description-17f65e1f47a6">網站
-                            SEO優化《第二篇》Meta Description 的寫法 — SEO優化| Jeffrey Talks</a>
+                        ＜td rowspan='number'＞上下合併
                     </blockquote>
-                </footer>
+                    <!-- just some example -->
+                    <table>
+                        <tr>
+                            <td>
+                            <td>normal</td>
+                            <td>normal</td>
+                            <td rowspan="2">rowspan</td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <td>normal</td>
+                            <td>normal</td>
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- just some example -->
+                    <br>
+                    <!-- just some example -->
+                    <blockquote>
+                        ＜th cospan='number'＞ = 左右合併
+                    </blockquote>
+
+                    <table>
+                        <tr>
+                            <td>
+                            <td colspan="2">normal</td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <td>normal</td>
+                            <td>normal</td>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <section class="codepen">
+                        <iframe height="265" style="width: 100%;" scrolling="no" title="colspan, rowspan"
+                            src="https://codepen.io/Dinnerking/embed/OJReQEv?height=265&theme-id=dark&default-tab=html,result"
+                            frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href='https://codepen.io/Dinnerking/pen/OJReQEv'>colspan, rowspan</a> by
+                            Dinner
+                            (<a href='https://codepen.io/Dinnerking'>@Dinnerking</a>) on <a
+                                href='https://codepen.io'>CodePen</a>.
+                        </iframe>
+                    </section>
+                </section>
+                    <!-- table end -->
+                    <section>
+                    <h3>表單 Form</h3>
+                    <form action="https://www.google.com/search" target="_blank">
+                        <label for="search">Hijack Google</label>
+                        <input type="text" id="search" name="q">
+                        <button>Submit</button>
+                    </form>
+                    <img src="img/pic-form4.png">
+                    <ol>
+                        <li>＜form＞本身是語意化標籤，告訴裝置以下是表單內容，並不是表單本體</li>
+                        <li>＜form＞中的<b>action屬性用來填網頁伺服器所在的位置</b></li>
+                        <li><b>＜input type=”放入的表單種類”＞</b>type裡面有很多種，這邊的例子是text，text可以用來輸入各種字串</li>
+                        <li><b>＜label for=” ”＞</b>超棒的標籤，<b>label裡面的for=”配合的input
+                                id“會使該標籤和該input配對</b>，這樣不只可以清楚表達該input是做什麼用的，
+                            也能點選label中的字串並直接連接到該表格，不知道我在說什麼可以點上面的Hijack字樣看看
+                        </li>
+                        <li><b>＜button＞中間可以任意輸入字串＜/button＞按鈕</b>
+                            <mark>如果把＜button＞放在＜form＞裡面並無設定type，會直接預設成submit，按下去會送出該表單</mark>，
+                            也就是＜input type=”submit”＞的效果，如果只是想在表單裡面放單純的按鈕，記得＜button type=”button”＞
+                        </li>
+                        <li><b>name屬性則是要傳輸給後端的資料名稱</b>，在google的例子中，後端資料庫期待收到的資料叫做q所以要配合</li>
+                    </ol>
+                    <img src="img/pic-form5.png">
+                    <p>用開發者工具去點Google的搜尋框會出現一堆東西，找到name</p>
+                    <img src="img/pic-form6.png">
+                    <p>用上面的搜尋框就可以綁架Google的搜尋</p>
+                </section>
+                <!-- form end -->
+                <section>
+                    <h3>表單的種類＜from＞type</h3>
+                    <p>剛剛示範過type="text"了，現在來看看其他的吧！</p>
+                    <ul>
+                        <li>checkbox<br>
+                            <form>
+                                <label for="1">I'm checkbox no.1</label>
+                                <input type="checkbox" id="1" name="1">
+                                <label for="2">I'm checkbox no.2</label>
+                                <input type="checkbox" id="2" name="2">
+                                <label for="3">I'm checkbox no.3</label>
+                                <input type="checkbox" id="3" name="3">
+                            </form>
+                            複選用的打勾表格，成熟的大人在這裡可以全都要
+                        </li>
+                        <li>radio<br>
+                            <form>
+                                <input type="radio" id="one" name="circles" value="one">
+                                <label for="one">Circle 1</label>
+                                <input type="radio" id="two" name="circles" value="two">
+                                <label for="two">Circle 2</label>
+                                <input type="radio" id="three" name="circles" value="three">
+                                <label for="three">Circle 3</label>
+                            </form>
+                            單選用的表格，多成熟都不能全選<br>
+                            <mark>要達到多選一的作用，radio的name屬性要全部都寫一樣，這樣瀏覽器才會判定他們是一組的</mark>
+                        </li>
+                        <li>select 下拉選單，唯一不是用input插入的選單<br>
+                            <img src="img/pic-form7.png">
+                            <form>
+                                <label for="song">Choose a song you like</label>
+                                <select id="song">
+                                    <option value="">you need to choose!</option>
+                                    <option value="FP">Fakeband - Phenomenal </option>
+                                    <option value="JS">Jasck Stauber - Baby Hotline </option>
+                                    <option value="RA">Rodrigo Amarante - Tuyo </option>
+                                </select>
+                            </form>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>表單可用的屬性、驗證與限制</h3>
+                    <p>除了可以設定預設選項外，我們還可以做些簡單的資料篩選和驗證，
+                        不用把資料傳到後端判斷再對使用者回覆！
+                    </p>
+                    <ul>
+                        <li>
+                            <b>checked, selected</b>
+                            把這個放到checkbox, radio或select裡面的option標籤可以讓該選項變成預設
+                        </li>
+                        <li>
+                            <b>required</b>
+                            放在input裡面會讓該資料變成必要，不填會跳警告
+                            <img src="img/pic-form8.png">
+                        </li>
+                        <li>
+                            <b>minlength=" "和maxlength=" "</b><br>
+                            可以做簡易的字元長度驗證，前者是最小要符合多少字元，後者是最長不超過多少字元
+                            <img src="img/pic-form9.png">
+                        </li>
+                        <li>
+                            <b>＜input type="email"＞</b><br>
+                            簡易的email驗證，但不會確認是否有這個email，只是小小防呆篩選有沒有符合email格式
+                            <img src="img/pic-form10.png">
+                        </li>
+                    </ul>
+                </section>
             </article>
 
         </main>
