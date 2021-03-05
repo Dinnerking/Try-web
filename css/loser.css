@@ -161,7 +161,7 @@ section>p, section>blockquote{
     clear: both;
 }
 
-.back {
+.back, .backToMenu {
     position: fixed;
     width: 0;
     height: 0;
@@ -269,7 +269,6 @@ section>p, section>blockquote{
 
 .left {
     width: 40%;
-    float: left;
     display: inline-block;
 }
 .left ul, .right ul li, .right a{
@@ -312,8 +311,7 @@ section>p, section>blockquote{
     border-radius:5%;
     background-color:floralwhite;
     position:relative;
-    margin:0 0 2% 2%;
-    
+    margin:0 0 2% 2%;  
 }
 .writing-notes>li>.tags{
     margin-left:5%;
@@ -420,7 +418,7 @@ article p{
         border-color: darkred;
     }
 }
-article a:hover{
+article a:hover, .writing-notes>li>.tags:hover{
     color:lightcoral;
 }
 article h2{

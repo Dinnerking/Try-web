@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('.drop-menu, .writing, .tags').click(function (event) {
+    $('.drop-menu, .writing').click(function (event) {
         event.preventDefault()
     })
 
@@ -8,7 +8,12 @@ $(document).ready(function () {
         $('.drop-menu').toggleClass('active');
         $('.drop-content').stop().slideToggle();
     })
-    //-----------------------------------------------------------------------------------------
+
+    //-------------------------------for tags-----------------------------------------
+    $('.tags').click(function (event) {
+        $('.writing-notes>li>a[href="#htmlTags"], article>header>a[href="#htmlTags"]').attr('href', 'losernote-htmlTags.html');
+        $('.writing-notes>li>a[href="#cssTags"], article>header>a[href="#cssTags"]').attr('href', 'losernote-cssTags.html');
+    })
     //-------------------some animation when changing pages---------------
     //Home page//
     $('.main').addClass('goin');
@@ -31,9 +36,9 @@ $(document).ready(function () {
 
 
 
-	//for both menu and .right div//
-	$(".menu a:contains('Home')").addClass("fas fa-home");
-	$(".menu a:contains('About')").addClass("far fa-comment-dots");
+    //for both menu and .right div//
+    $(".menu a:contains('Home')").addClass("fas fa-home");
+    $(".menu a:contains('About')").addClass("far fa-comment-dots");
     $(".menu a:contains('Writing')").addClass("fas fa-pen-nib");
     $(".menu a:contains('Contact')").addClass("fas fa-envelope");
     $(".menu a:contains('Translate'), .right span:contains('Translating')").addClass("fas fa-language");
